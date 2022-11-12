@@ -6,9 +6,9 @@ import useStyles from './styles.js';
 
 const infoCards = [
   { color: '#00838f', title: 'Latest News', text: 'Give me the latest news' },
-  { color: '#1565c0', title: 'News by Categories', info: 'Business, Entertainment, General, Health, Science, Sports, Technology', text: 'Give me the latest Technology news' },
-  { color: '#4527a0', title: 'News by Terms', info: 'Bitcoin, PlayStation 5, Smartphones, Donald Trump...', text: 'What\'s up with PlayStation 5' },
-  { color: '#283593', title: 'News by Sources', info: 'CNN, Wired, BBC News, Time, IGN, Buzzfeed, ABC News...', text: 'Give me the news from CNN' },
+  { color: '#1565c0', title: 'News of Weather', text: 'what is the weather' },
+  { color: '#4527a0', title: 'News Related Bitcoin', text: 'What\'s up with Bitcoin' },
+  { color: '#283593', title: 'News about Cryptocurrency', text: 'Give me latest news about cryptocurrency' },
 ];
 
 const NewsCards = ({ articles, activeArticle }) => {
