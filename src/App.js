@@ -17,29 +17,6 @@ const App = () => {
   useEffect(() => {
     alanBtn({
       key: alankey,
-      onCommand: ({ command, articles, number }) => {
-        if (command === 'newHeadlines') {
-          setNewsArticles(articles);
-          setActiveArticle(-1);
-        } else if (command === 'instructions') {
-          setIsOpen(true);
-        } else if (command === 'highlight') {
-          setActiveArticle((prevActiveArticle) => prevActiveArticle + 1);
-        } else if (command === 'open') {
-          const parsedNumber = number.length > 2 ? wordsToNumbers((number), { fuzzy: true }) : number;
-          const article = articles[parsedNumber - 1];
-
-          // if (parsedNumber > articles.length) {
-          //   alanBtn().playText('Please try that again...');
-          // } else 
-          if (article) {
-            window.open(article.url, '_blank');
-            alanBtn().playText('Opening...');
-          } else {
-            alanBtn().playText('Please try that again...');
-          }
-        }
-      },
     });
   }, []);
 
@@ -52,16 +29,10 @@ const App = () => {
             <div className={classes.card}><Typography variant="h5" component="h2">Try saying: <br /><br />Go back</Typography></div>
           </div>
         ) : null}
-        <img src="https://alan.app/voice/images/previews/preview.jpg" className={classes.alanLogo} alt="logo" />
+        <img src="https://voicebot.ai/wp-content/uploads/2019/10/alan.jpg" className={classes.alanLogo} alt="logo" />
       </div>
       <NewsCards articles={newsArticles} activeArticle={activeArticle} />
-      <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
-      {!newsArticles.length ? (
-        <div className={classes.footer}>
-          
-          <img className={classes.image} src={logo} height="50px" alt="JSMastery logo" />
-        </div>
-      ) : null}
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen} />   
     </div>
   );
 };
